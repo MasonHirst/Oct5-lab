@@ -89,7 +89,7 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 // CODE HERE
 const myStrongest = monstersInYourPocket.filter(arr => arr.CP > 200)
 
-// console.log(myStrongest)
+console.log(myStrongest)
 
 
 ////////// PROBLEM 5 //////////

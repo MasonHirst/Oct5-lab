@@ -6,7 +6,9 @@
 */
 
 // CODE HERE
-
+const multiply = (num1, num2, callback) => {
+  callback(num1 * num2)
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -15,8 +17,6 @@
 // multiply(4, 3, answer => {
 //   console.log('The answer is ' + answer) //should console.log 12
 // })
-
-
 
 ////////// PROBLEMS 2 - 6 //////////
 
@@ -36,7 +36,9 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
-
+const first = (arr, callback) => {
+  callback(arr[0])
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -47,7 +49,6 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 // })
 
 
-
 ////////// PROBLEM 3 //////////
 
 /*
@@ -56,7 +57,9 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
-
+const last = (arr, cb) => {
+  cb(arr[arr.length - 1])
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -78,7 +81,13 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
-
+const contains = (arr, name, cb) => {
+  if (arr.includes(name)) {
+      cb(true)
+  } else {
+    cb(false)
+  }
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -103,6 +112,23 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
+// const uniq = (arr, cb) => {
+//   newArray = []
+//   for (i = 0; i < arr.length; i++) {
+//     if (!newArray.includes(arr[i])) {
+//       newArray.push(arr[i])
+//     }
+//   }
+//   return newArray
+// }
+// console.log(uniq(names))
+
+
+
+let uniq = (arr, cb) => {
+  let newArray = Array.from(new Set(arr))
+  cb(newArray)
+}
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
@@ -112,7 +138,9 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
-
+// uniq(names, (uniqArr) => {
+//   console.log(`The new names array with all the duplicate items removed is ${uniqArr}.`)
+// })
 
 
 ////////// PROBLEM 6 //////////
@@ -123,7 +151,11 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
-
+const each = (arr, cb) => {
+  arr.forEach(element => {
+    
+  })
+}
 
 /*
   Invoke the each function, passing in the names array and a callback function.
@@ -166,15 +198,21 @@ var users = [
 // Do not edit the code above.
 
 // CODE HERE 
-
+function getUserById(arrOfObs, id, callback) {
+  let matchingUser = null
+  for (let i = 0; i <arrOfObs.length; i++) {
+    matchingUser = arrOfObs[i]
+  }
+  callback(matchingUser)
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// getUserById(users, '16t', user => {
-//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
-// })
+getUserById(users, '16t', user => {
+  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
+})
 
 ////////// CHALLENGE //////////
 
