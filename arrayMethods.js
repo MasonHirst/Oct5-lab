@@ -131,11 +131,11 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 
 // CODE HERE
 let bobsTotal = purchases.filter(function(element) {
-                                  return element.owner === "Bob"})
+                                  return element.owner === "Bob"}) //filter function is an implied if statement, so we just have to state the if boolean : element.owner === "Bob"
                                   .map(num => {
-                                    return num.price
+                                    return num.price               //map function wants something to do with each item of the array. so in this case, we only want to return the price number value of each array, which is an array
                                   }).reduce((runningTotal, index) => {
-                                    return runningTotal + index
+                                    return runningTotal + index     //the reduce function adds up the values of an array.
                                    })
                                 
 console.log(bobsTotal)

@@ -152,9 +152,7 @@ let uniq = (arr, cb) => {
 
 // CODE HERE 
 const each = (arr, cb) => {
-  arr.forEach(element => {
-    
-  })
+  arr.forEach((element, index) => cb(element, index))
 }
 
 /*
@@ -165,8 +163,12 @@ const each = (arr, cb) => {
 */
 
 // CODE HERE
+each(names, (element, index) => {
+  // console.log(`The item at index ${index} is ${element}`)
+})
 
 
+// var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 ////////// PROBLEM 7 //////////
 
 /*
@@ -201,6 +203,9 @@ var users = [
 function getUserById(arrOfObs, id, callback) {
   let matchingUser = null
   for (let i = 0; i <arrOfObs.length; i++) {
+    if (arrOfObs[i].id === id) {
+      matchingUser = arrOfObs[i]
+    }
     matchingUser = arrOfObs[i]
   }
   callback(matchingUser)
@@ -210,9 +215,9 @@ function getUserById(arrOfObs, id, callback) {
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-getUserById(users, '16t', user => {
-  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
-})
+// getUserById(users, '16t', user => {
+//   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address) 
+// })
 
 ////////// CHALLENGE //////////
 
@@ -231,6 +236,8 @@ getUserById(users, '16t', user => {
 */
 
 // CODE HERE
+const addingFactory = num1 => num2 => num1 + num2
+
 
 /*
   Now that you have addingFactory, you can create other
@@ -245,6 +252,8 @@ getUserById(users, '16t', user => {
 */
 
 // CODE HERE
+const addTen = addingFactory(10)
+
 
 /*
   Now the inner function is stored in the addTen variable! 
@@ -257,6 +266,8 @@ getUserById(users, '16t', user => {
 */
 
 // CODE HERE
+console.log(addTen(9))
+
 
 /*
   Let's make another function from the addingFactory. 
@@ -270,3 +281,6 @@ getUserById(users, '16t', user => {
 */
 
 // CODE HERE
+const add68 = addingFactory(68)
+
+console.log(add68(10))
